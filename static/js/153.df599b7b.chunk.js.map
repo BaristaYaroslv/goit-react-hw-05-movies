@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/153.df599b7b.chunk.js","mappings":"gMAMA,EANiB,WAGf,OAFAA,QAAQC,IAAI,cAEL,oCACR,C","sources":["pages/NotFound/NotFound.js"],"sourcesContent":["const NotFound = () => {\n  console.log('Not found');\n\n  return <p>Not found</p>;\n};\n\nexport default NotFound;\n"],"names":["console","log"],"sourceRoot":""}
