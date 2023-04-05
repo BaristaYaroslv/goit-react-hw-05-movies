@@ -1,12 +1,15 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { useContextFetchFilm } from 'components/ContextFetchFilm/ContextFetchFilm';
+// import { useContextFetchFilm } from 'components/ContextFetchFilm/ContextFetchFilm';
 import Loader from 'components/Loader';
 import ReviewsList from 'components/ReviewsList';
+import ApiThemoviedb from '../../servises/fetchFilms'
+
+const apiThemoviedb = new ApiThemoviedb();
 
 const Reviews = () => {
   // * Беру контекст для роботи із APIзапросами
-  const { apiThemoviedb } = useContextFetchFilm();
+  // const { apiThemoviedb } = useContextFetchFilm();
   const [showLoad, setShowLoad] = useState(false);
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
@@ -46,7 +49,7 @@ const Reviews = () => {
     return () => {
       controller.abort();
     };
-  }, [apiThemoviedb, movieId]);
+  }, [movieId]);
 
   return (
     <>

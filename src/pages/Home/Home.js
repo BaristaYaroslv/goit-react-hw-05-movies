@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react';
-import { useContextFetchFilm } from 'components/ContextFetchFilm/ContextFetchFilm';
-
+// import { useContextFetchFilm } from 'components/ContextFetchFilm/ContextFetchFilm';
 import Loader from 'components/Loader';
 import MoviesList from 'components/MoviesList';
+
+import ApiThemoviedb from '../../servises/fetchFilms'
+
+const apiThemoviedb = new ApiThemoviedb();
 
 const Home = () => {
   const [showLoad, setShowLoad] = useState(false);
   const [films, setFilms] = useState([]);
   // * Беру контекст для роботи із APIзапросами
-  const { apiThemoviedb } = useContextFetchFilm();
+  // const { apiThemoviedb } = useContextFetchFilm();
 
   useEffect(() => {
     const controller = new AbortController();
@@ -31,8 +34,7 @@ const Home = () => {
     return () => {
       controller.abort();
     };
-  }, [apiThemoviedb]);
-  // ! З попререднім рядком нема проблем? Не треба мемозувати apiThemoviedb??
+  }, []);
 
   return (
     <>

@@ -5,11 +5,14 @@ import BackLink from 'components/BackLink';
 import AdditionalInformationFilm from 'components/AdditionalInformationFilm';
 import MovieInformation from 'components/MovieInformation';
 import Loader from 'components/Loader';
-import { useContextFetchFilm } from 'components/ContextFetchFilm/ContextFetchFilm';
+import ApiThemoviedb from '../../servises/fetchFilms'
+// import { useContextFetchFilm } from 'components/ContextFetchFilm/ContextFetchFilm';
+
+const apiThemoviedb = new ApiThemoviedb();
 
 const MovieDetails = () => {
   // * Беру контекст для роботи із APIзапросами
-  const { apiThemoviedb } = useContextFetchFilm();
+  // const { apiThemoviedb } = useContextFetchFilm();
   const [filmInformatioin, setFilmInformatioin] = useState(null);
   const [showLoad, setShowLoad] = useState(false);
 
@@ -57,7 +60,7 @@ const MovieDetails = () => {
     return () => {
       controller.abort();
     };
-  }, [apiThemoviedb, movieId]);
+  }, [movieId]);
 
   return (
     <>

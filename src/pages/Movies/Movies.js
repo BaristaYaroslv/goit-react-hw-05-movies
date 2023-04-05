@@ -29,7 +29,6 @@ const Movies = () => {
 
   useEffect(() => {
     if (nameFilms === '') {
-      setFilms([]);
       return;
     }
 

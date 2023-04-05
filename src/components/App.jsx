@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { lazy } from 'react';
-import { ContextFetchFilm } from './ContextFetchFilm/ContextFetchFilm';
+// import { ContextFetchFilm } from './ContextFetchFilm/ContextFetchFilm';
 import SharedLayout from './SharedLayout';
 
 const Home = lazy(() => import('pages/Home'));
@@ -13,7 +13,7 @@ const Reviews = lazy(() => import('./Reviews'));
 
 export const App = () => {
   return (
-    <ContextFetchFilm>
+    // <ContextFetchFilm>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
@@ -25,6 +25,6 @@ export const App = () => {
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </ContextFetchFilm>
+    // </ContextFetchFilm> 
   );
 };
