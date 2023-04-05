@@ -11,12 +11,12 @@ const AdditionalInformationFilm = () => {
       <ul>
         <li>
           <Link to="cast" state={{ from: backLinkHref }}>
-            Cast
+            Cast &#128064;
           </Link>
         </li>
         <li>
           <Link to="reviews" state={{ from: backLinkHref }}>
-            Reviews
+            Reviews &#9997;
           </Link>
         </li>
       </ul>

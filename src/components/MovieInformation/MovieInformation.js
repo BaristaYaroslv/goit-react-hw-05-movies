@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Wrap, WrapImage, Image, H1, H2, P,} from './MovieInformation.styled';
+import { Wrap, WrapImage, Image, H1, H2, P} from './MovieInformation.styled';
 
 const MovieInformation = ({ filmInformatioin }) => {
   const {
@@ -10,6 +10,7 @@ const MovieInformation = ({ filmInformatioin }) => {
     overview,
     genresText,
   } = filmInformatioin;
+  console.log({ filmInformatioin })
 
   return (
     <Wrap>

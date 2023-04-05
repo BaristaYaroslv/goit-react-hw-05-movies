@@ -12,7 +12,7 @@ export const List = styled.ul`
 export const Item = styled.li`
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  padding: 20px;
+  padding: 10px;
   border-radius: 4px;
 
   &:hover {
@@ -43,5 +43,9 @@ export const Item = styled.li`
   p {
     font-size: 14px;
     margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 20px;
   }
 `;
