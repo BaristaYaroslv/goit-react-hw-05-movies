@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const List = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 20px;
+  grid-gap: 10px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -24,7 +24,6 @@ export const Item = styled.li`
   a {
     text-decoration: none;
     color: #333;
-    display: flex;
     flex-direction: column;
     align-items: center;
   }
