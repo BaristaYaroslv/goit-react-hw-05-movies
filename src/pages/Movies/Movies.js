@@ -1,14 +1,17 @@
 import { useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { useContextFetchFilm } from 'components/ContextFetchFilm/ContextFetchFilm';
+// import { useContextFetchFilm } from 'components/ContextFetchFilm/ContextFetchFilm';
 import SearchBox from 'components/SearchBox';
 import NoFilm from 'components/NoFilm';
 import MoviesList from 'components/MoviesList';
 import Loader from 'components/Loader';
+import ApiThemoviedb from '../../servises/fetchFilms'
+
+const apiThemoviedb = new ApiThemoviedb();
 
 const Movies = () => {
   // * Беру контекст для роботи із APIзапросами
-  const { apiThemoviedb } = useContextFetchFilm();
+  // const { apiThemoviedb } = useContextFetchFilm();
 
   const [searchParams, setSearchParams] = useSearchParams();
   const [films, setFilms] = useState([]);
@@ -55,7 +58,7 @@ const Movies = () => {
     return () => {
       controller.abort();
     };
-  }, [nameFilms, apiThemoviedb]);
+  }, [nameFilms]);
 
   return (
     <>
